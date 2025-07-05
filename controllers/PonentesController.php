@@ -8,9 +8,14 @@ use MVC\Router;
 class PonentesController {
 
     public static function index(Router $router){
+        $ponentes = Ponente::all();
+
+        //debuguear($ponentes);
+
         // Render a la vista 
         $router->render('admin/ponentes/index', [
             'titulo' => 'Ponentes / Conferencistas',
+            'ponentes' => $ponentes
         ]);
     }
 
