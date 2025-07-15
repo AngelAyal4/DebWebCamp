@@ -72,6 +72,7 @@
 </fieldset>
 
 
+
 <fieldset class="formulario__fieldset">
     <legend class="formulario__legend">Información Extra</legend>
 
