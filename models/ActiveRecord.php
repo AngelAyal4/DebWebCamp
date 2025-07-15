@@ -124,12 +124,28 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    // Paginación de Registros
+    public static function paginar($por_pagina, $offset) {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT ${por_pagina} OFFSET ${offset} " ;
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
     // Busqueda Where con Columna 
     public static function where($columna, $valor) {
         $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
+
+    // Traer un total de Reguistros
+    public static function total() {
+        $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        $resultado = self::$db->query($query);
+        $total = array_shift($resultado->fetch_array());
+        return $total;
+    }
+
 
     // crea un nuevo registro
     public function crear() {
