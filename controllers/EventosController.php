@@ -6,6 +6,7 @@ use MVC\Router;
 use Model\Categoria;
 use Model\Dia;
 use Model\Hora;
+use Model\Evento;
 
 class EventosController {
 
@@ -23,6 +24,23 @@ class EventosController {
         $dias = Dia::all('ASC');
         $horas = Hora::all('ASC');
 
+        $evento = new Evento;
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $evento->sincronizar($_POST);
+
+            // Validar los datos
+            $alertas = $evento->validar();
+
+            if(empty($alertas)) {
+                // Guardar el evento
+                $resultado = $evento->guardar();
+                if($resultado) {
+                    header('Location: /admin/eventos');
+                }
+            }
+        }
+
 
 
         // Render a la vista 
@@ -31,7 +49,8 @@ class EventosController {
             'alertas' => $alertas,
             'categorias' => $categorias,
             'dias' => $dias,
-            'horas' => $horas
+            'horas' => $horas,
+            'evento' => $evento
         ]);
     }
 
