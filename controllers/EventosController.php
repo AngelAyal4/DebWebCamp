@@ -13,4 +13,14 @@ class EventosController {
         ]);
     }
 
+    public static function crear(Router $router){
+        $alertas = [];
+
+        // Render a la vista 
+        $router->render('admin/eventos/crear', [
+            'titulo' => 'Crear Evento',
+            'alertas' => $alertas
+        ]);
+    }
+
 }
