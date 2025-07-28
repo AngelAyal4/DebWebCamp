@@ -54,5 +54,4 @@
 
 <?php 
     echo $paginacion;
-
 ?>
