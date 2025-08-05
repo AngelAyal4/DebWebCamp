@@ -21,3 +21,6 @@ h3 {
 [class$="__heading"] { //$= significa que toma el elemento que finaliza con "ejemplo"
     @include m.nombre-pagina;
 }
+[class$="descripcion"] { //$= significa que toma el elemento que finaliza con "ejemplo"
+    @include m.descripcion-pagina;
+}

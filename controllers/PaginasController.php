@@ -16,7 +16,7 @@ class PaginasController {
     public static function evento(Router $router) {
 
         // Render a la vista de inicio
-        $router->render('paginas/index', [
+        $router->render('paginas/devwebcamp', [
             'titulo' => 'Sobre WebDevCamp'
         ]);
 
@@ -25,7 +25,7 @@ class PaginasController {
     public static function paquetes(Router $router) {
 
         // Render a la vista de inicio
-        $router->render('paginas/index', [
+        $router->render('paginas/paquetes', [
             'titulo' => 'Paquetes WebDevCamp'
         ]);
 
@@ -33,7 +33,7 @@ class PaginasController {
     public static function conferencias(Router $router) {
 
         // Render a la vista de inicio
-        $router->render('paginas/index', [
+        $router->render('paginas/workshops-conferencias', [
             'titulo' => 'Conferencias & Workshops'
         ]);
 
