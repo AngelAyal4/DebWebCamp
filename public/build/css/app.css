@@ -65,7 +65,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -545,6 +546,16 @@ h3 {
 .eventos--workshops .eventos__heading {
   color: #00c8c2;
 }
+.eventos--workshops .evento__informacion {
+  background-color: #00c8c2;
+  transition: 300ms background-color ease;
+}
+.eventos--workshops .evento__informacion:hover {
+  background-color: rgb(0, 149, 144.53);
+}
+.eventos .swiper-button-next, .eventos .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.5);
+}
 
 .evento__hora {
   font-weight: 700;
@@ -558,6 +569,15 @@ h3 {
 }
 .evento__informacion:hover {
   background-color: rgb(0, 98.8729508197, 193);
+}
+.evento__nombre {
+  font-size: 2rem;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .evento__introduccion {
   font-size: 1.6rem;
@@ -574,7 +594,7 @@ h3 {
   align-items: center;
 }
 .evento__imagen-autor {
-  width: 5rem;
+  width: 6rem;
   background-color: #FFFFFF;
   border-radius: 50%;
 }
@@ -746,6 +766,7 @@ h3 {
 
 .header {
   min-height: 60rem;
+  background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, #1a1b15, rgba(26, 27, 21, 0.5)), -webkit-image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
   background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, #1a1b15, rgba(26, 27, 21, 0.5)), image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position: top left, bottom right, center, center;
@@ -766,16 +787,19 @@ h3 {
     justify-content: flex-end;
   }
 }
-.header__enlace {
+.header__enlace, .header__submit {
   all: unset;
   color: #FFFFFF;
   font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 700;
 }
-.header__enlace:hover {
+.header__enlace:hover, .header__submit:hover {
   color: #007df4;
   cursor: pointer;
+}
+.header__form {
+  display: flex;
 }
 .header__contenido {
   padding: 5rem 2rem;
@@ -788,7 +812,8 @@ h3 {
 .header__logo {
   font-size: clamp(2.5rem, -0.8rem + 10vw, 8rem);
   background: linear-gradient(to right, #007df4, #00c8c2);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
   width: 100%;
@@ -886,11 +911,15 @@ h3 {
 }
 .navegacion__enlace {
   color: #FFFFFF;
-  font-size: 2.2rem;
+  font-size: 2rem;
   padding: 2rem;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
+}
+.navegacion__enlace--actual {
+  color: #007df4;
+  background-color: #FFFFFF;
 }
 .navegacion__enlace:hover {
   background-color: #FFFFFF;

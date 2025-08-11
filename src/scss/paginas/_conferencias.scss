@@ -2,7 +2,6 @@
 @use 'base/variables' as v;
 
 .agenda{
-
     padding: 5rem 0;
     @include m.contenedor;
 }
@@ -27,12 +26,25 @@
         #{$modificador}__heading{
             color: v.$secundario;
         }
+
+        .evento__informacion{
+            background-color: v.$secundario;
+            transition: 300ms background-color ease;
+            &:hover{
+                background-color: darken($color: v.$secundario, $amount: 10%);
+            }
+        }
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+        color: rgba($color: v.$blanco, $alpha: .5)
     }
 }
 
 .evento{
     &__hora{
         font-weight: v.$bold;
+        
     }
     &__informacion{
         padding: 2rem;
@@ -43,6 +55,16 @@
         &:hover{
             background-color: darken($color: v.$azul, $amount: 10%);
         }
+    }
+
+    &__nombre{
+        font-size: 2rem;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     &__introduccion{
@@ -62,7 +84,7 @@
     }
 
     &__imagen-autor{
-        width: 5rem;
+        width: 6rem;
         background-color: v.$blanco;
         border-radius: 50%;
     }
