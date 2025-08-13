@@ -159,8 +159,11 @@ class ActiveRecord {
     }
 
     // Traer un total de Reguistros
-    public static function total() {
+    public static function total($columna = '', $valor = '') {
         $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        if($columna) {
+            $query .= " WHERE ${columna} = '${valor}' ";
+        }
         $resultado = self::$db->query($query);
         $total = array_shift($resultado->fetch_array());
         return $total;
