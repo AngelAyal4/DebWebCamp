@@ -97,6 +97,42 @@
             </div>
         <?php endforeach; ?>
     </div>
+</section>
+
+<!-- Mapa de ubicación -->
+
+<div id="mapa" class="mapa"> </div>
+
+<!-- Valor de los tickets -->
+
+<section class="boletos">
+    <h2 class="boletos__heading">Boletos</h2>
+    <p class="boletos__descripcion">Precios de DevWebCamp</p>
+
+    <div class="boletos__grid">
+        <div class="boleto boleto--presencial">
+            <h4 class="boleto__logo">&#60;DevWebCamp/></h4>
+            <h3 class="boleto__plan">Presencial</h3>
+            <p class="boleto__precio">$220</p>
+        </div>
+
+        <div class="boleto boleto--virtual">
+            <h4 class="boleto__logo">&#60;DevWebCamp/></h4>
+            <h3 class="boleto__plan">Virtual</h3>
+            <p class="boleto__precio">$60</p>
+        </div>
+
+        <div class="boleto boleto--gratis">
+            <h4 class="boleto__logo">&#60;DevWebCamp/></h4>
+            <h3 class="boleto__plan">Presencial</h3>
+            <p class="boleto__precio">Gratis - $0</p>
+        </div>
+    </div>
+
+    <div class="boleto__enlace-contenedor">
+        <a href="/paquetes" class="boleto__enlace">Ver Paquetes</a>
+    </div>
+</section>
 
 
 
