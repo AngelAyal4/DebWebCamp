@@ -24,7 +24,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-        AOS.init();
+        AOS.init(
+            {
+                duration: 300,
+                once: true,
+            }
+        );
     </script>
 
     <script src="/build/js/bundle.min.js" defer></script>

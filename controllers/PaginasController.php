@@ -114,4 +114,11 @@ class PaginasController {
         ]);
 
     }
+
+    public static function error404(Router $router) {
+        // Render a la vista de error
+        $router->render('paginas/error404', [
+            'titulo' => 'Página No Encontrada'
+        ]);
+    }
 }

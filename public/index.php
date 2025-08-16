@@ -12,6 +12,7 @@ use Controllers\RegalosController;
 use Controllers\APIEventos;
 use Controllers\APIPonentes;
 use Controllers\PaginasController;
+use Controllers\RegistroController;
 
 $router = new Router();
 
@@ -64,10 +65,15 @@ $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
 $router->get('/admin/regalos', [RegalosController::class, 'index']);
 
+//Registro de usuario
+$router->get('/finalizar-registro', [RegistroController::class, 'crear']);
+$router->post('/finalizar-registro', [RegistroController::class, 'crear']);
+
 //Area publica
 $router->get('/', [PaginasController::class, 'index']);
 $router->get('/devwebcamp', [PaginasController::class, 'evento']);
 $router->get('/paquetes', [PaginasController::class, 'paquetes']);
 $router->get('/workshops-conferencias', [PaginasController::class, 'conferencias']);
+$router->get('/404', [PaginasController::class, 'error404']);
 
 $router->comprobarRutas();

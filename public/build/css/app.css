@@ -930,6 +930,20 @@ h3 {
   }
 }
 
+.pagina_404__contenedor {
+  text-align: center;
+}
+.pagina_404__texto {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+}
+.pagina_404__enlace {
+  background-color: #007df4;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;
