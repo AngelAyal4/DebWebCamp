@@ -84,8 +84,7 @@ import Swal from 'sweetalert2'
         }
 
         async function submitFormulario(e) {
-            e.preventDefault();
-
+ 
             // Obtener el regalo
             const regaloId = document.querySelector('#regalo').value
             const eventosId = eventos.map(evento => evento.id)
